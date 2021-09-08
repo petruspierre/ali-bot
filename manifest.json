@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "AliExpress Bot",
+  "description": "Superdeals bot",
+  "version": "1.0",
+  "browser_action": {
+    "default_title": "Bot - Inativo",
+    "default_icon": "assets/off.png"
+  },
+  "permissions": [
+      "activeTab",
+      "tabs",
+      "contextMenus",
+      "storage"
+  ],
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.aliexpress.com/item/*"
+      ],
+      "js": ["thirdParty/jQuery.js", "src/timer.js"]
+    },
+    {
+      "matches": [
+        "https://*.shoppingcart.aliexpress.com/order/*"
+      ],
+      "js": ["thirdParty/jQuery.js", "src/buy.js"]
+    }
+  ]
+}
