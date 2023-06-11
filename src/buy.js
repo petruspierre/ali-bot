@@ -1,7 +1,7 @@
 chrome.runtime.sendMessage({ action: 1 }, function(response) {
-  console.log('Bot ativo? ' + response.state);
+  console.log('Configurações do bot', response.config);
 
-  if(response.state !== true) return;
+  if(response.config.active !== true) return;
   console.log('Rodando bot');
 
   var existCondition = setInterval(function() {

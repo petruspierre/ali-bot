@@ -5,7 +5,8 @@
   "version": "1.0",
   "browser_action": {
     "default_title": "Bot - Inativo",
-    "default_icon": "assets/off.png"
+    "default_icon": "assets/off.png",
+    "default_popup": "src/popup/popup.html"
   },
   "permissions": [
       "activeTab",
